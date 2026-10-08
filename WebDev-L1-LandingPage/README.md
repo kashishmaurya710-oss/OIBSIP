@@ -1,4 +1,4 @@
-# OIBSIP
+
 # CodeNest Landing Page
 
 A responsive landing page for a web development course, built with HTML5 and CSS3.
