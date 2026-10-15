@@ -1,5 +1,4 @@
 
-
 # Personal Portfolio
 
 A responsive personal portfolio built with HTML5 and CSS3.

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Convert temperatures between Celsius, Fahrenheit and Kelvin. Built with HTML, CSS and vanilla JavaScript.">
+  <title>Temperature Converter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card">
+    <header class="card-header">
+      <h1>Temperature Converter</h1>
+      <p class="subtitle">Type a temperature, pick its unit, and see it in Celsius, Fahrenheit and Kelvin.</p>
+    </header>
+
+    <form id="converter" novalidate>
+      <div class="field">
+        <label for="temp">Temperature</label>
+        <input
+          type="text"
+          id="temp"
+          name="temp"
+          inputmode="decimal"
+          autocomplete="off"
+          placeholder="For example, 25"
+          aria-describedby="error"
+        >
+      </div>
+
+      <fieldset class="field">
+        <legend>Convert from</legend>
+        <div class="segments">
+          <input type="radio" id="unit-c" name="unit" value="C" checked>
+          <label for="unit-c">Celsius</label>
+
+          <input type="radio" id="unit-f" name="unit" value="F">
+          <label for="unit-f">Fahrenheit</label>
+
+          <input type="radio" id="unit-k" name="unit" value="K">
+          <label for="unit-k">Kelvin</label>
+        </div>
+      </fieldset>
+
+      <p id="error" class="error" role="alert"></p>
+
+      <div class="actions">
+        <button type="submit" id="convertBtn" class="btn primary">Convert</button>
+        <button type="button" id="clearBtn" class="btn secondary">Clear</button>
+      </div>
+    </form>
+
+    <section id="results" class="results" aria-live="polite" hidden>
+      <h2 class="visually-hidden">Converted values</h2>
+
+      <div class="gauge" aria-hidden="true">
+        <div class="track"><div class="mercury" id="mercury"></div></div>
+        <div class="ticks">
+          <span class="tick" style="left: 25%">0 °C freezing</span>
+          <span class="tick" style="left: 75%">100 °C boiling</span>
+        </div>
+      </div>
+
+      <div class="row" id="row-c">
+        <span class="name">Celsius</span>
+        <span class="value" id="out-c"></span>
+      </div>
+      <div class="row" id="row-f">
+        <span class="name">Fahrenheit</span>
+        <span class="value" id="out-f"></span>
+      </div>
+      <div class="row" id="row-k">
+        <span class="name">Kelvin</span>
+        <span class="value" id="out-k"></span>
+      </div>
+    </section>
+
+    <footer class="card-footer">
+      <p>Lowest possible temperature: -273.15 °C, -459.67 °F, 0 K.</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
